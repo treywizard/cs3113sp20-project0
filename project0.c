@@ -1,6 +1,7 @@
 #include <stdio.h>
 main() {
-  int test = stdin;
-  printf("%d/n", test);
+  int num = 0;
+  scanf("%d", &num);
+  printf("%d\n", num);
   return 0;
 }
