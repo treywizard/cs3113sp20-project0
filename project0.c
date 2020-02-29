@@ -82,7 +82,7 @@ int main()
                 one = c;
         }
       //Duplicate Loop to check for repeating characters
-        for(o = 0; o < count + 1; o++)
+        for(o = 0; o < count; o++)
         {
                 /*if(*dabbing[o].a == c && k == 0)
                 {
@@ -132,7 +132,7 @@ int main()
         if(k == 0)
         {
                 //printf("Here1");
-                for(p = 0; p < 1114112; p++)
+                for(p = 0; p < count + 1; p++)
                 {
                         if(dabbing[p].b == 0 && k == 0)
                         {
