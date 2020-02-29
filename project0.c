@@ -34,7 +34,7 @@ int main()
   //Input file
     fp = stdin;  
     int y = 0;
-    int x = 1;
+    int x = 0;
     // Extract characters from file and store in c, compares with dabbing array values for matching or new characters. 
     for (c = getc(fp); c != EOF; c = getc(fp)) 
     {
