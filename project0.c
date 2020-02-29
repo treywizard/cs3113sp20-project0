@@ -25,7 +25,7 @@ int main()
     {
         dabbing[i].b = 0;
         dabbing[i].a = malloc(4 * sizeof(char));
-        *dabbing[i].a = 'a';
+        // *dabbing[i].a = 'a';
         //printf("%ls", dabbing[i].a);
     }
     unsigned char c;
