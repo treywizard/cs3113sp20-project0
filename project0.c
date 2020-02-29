@@ -87,7 +87,7 @@ int main()
                         k = 1;
 
                 }*/
-		            if(one < 0x0080)
+		if(one < 0x0080)
                 {
                 	if(*dabbing[o].a == one  && k == 0 && x == 0)
                         {
