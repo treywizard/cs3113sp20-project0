@@ -19,6 +19,10 @@ int main()
     int count = 0;
     int k = 0;
     int m = -1;
+    int o;
+    int p;
+    int j;
+    int l;
     int z = 0;
     struct dab *dabbing = malloc(1114112 * sizeof(struct dab));
     for(int i = 0; i < 1114112; i++)
@@ -78,7 +82,7 @@ int main()
                 one = c;
         }
       //Duplicate Loop to check for repeating characters
-        for(int o = 0; o < count; o++)
+        for(o = 0; o < count; o++)
         {
                 /*if(*dabbing[o].a == c && k == 0)
                 {
@@ -128,7 +132,7 @@ int main()
         if(k == 0)
         {
                 //printf("Here1");
-                for(int p = 0; p < 1114112; p++)
+                for(p = 0; p < 1114112; p++)
                 {
                         if(dabbing[p].b == 0 && k == 0)
                         {
@@ -188,14 +192,14 @@ int main()
     while(k == 0)
     { 
         k = 1;
-        for(int l = 0; l < count; l++)
+        for(l = 0; l < count; l++)
         {
                 if(dabbing[l].b != 0)
                 {
                         k = 0;
                 }
         }
-         for(int j = 0; j < count; j++)
+         for(j = 0; j < count; j++)
          {
                 //printf("%s", dabbing[j].a);
                 if(dabbing[j].b > m)
