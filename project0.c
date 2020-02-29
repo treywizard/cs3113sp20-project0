@@ -24,7 +24,7 @@ int main()
     for(int i = 0; i < 1114112; i++)
     {
         dabbing[i].b = 0;
-        dabbing[i].a = malloc(4 * sizeof(char));
+        //dabbing[i].a = malloc(4 * sizeof(char));
         // *dabbing[i].a = 'a';
         //printf("%ls", dabbing[i].a);
     }
@@ -34,14 +34,15 @@ int main()
   //Input file
     fp = stdin;  
     int y = 0;
+    int x = 0;
     // Extract characters from file and store in c, compares with dabbing array values for matching or new characters. 
     for (c = getc(fp); c != EOF; c = getc(fp)) 
     {
         k = 0;
       //Duplicate Loop to check for repeating characters
-        for(int o = 0; o < 1114112; o++)
+        for(int o = 0; o < count; o++)
         {
-                if(*dabbing[o].a == c && k == 0)
+                if(*dabbing[o].a == c && k == 0 && x == 0)
                 {
                         //printf("Here2");
                         dabbing[o].b = dabbing[o].b + 1;
@@ -49,7 +50,6 @@ int main()
 
                 }
         }
-        count = count + 1;
       //Loop to place new character in proper position
         if(k == 0)
         {
@@ -58,6 +58,9 @@ int main()
                 {
                         if(dabbing[p].b == 0 && k == 0)
                         {
+                                dabbing[p].a = malloc(4 * sizeof(char));
+                                *dabbing[p].a = 'a';
+                                count = count + 1;
                                 //printf("%d ", d);
                                 if(c < 0x0080)
                                 {
@@ -105,6 +108,7 @@ int main()
                                 //printf("%s", dabbing[p].a);
                                 //dabbing[p].b = dabbing[p].b + 1;
                                 k = 1;
+                                x = 0;
                         }
                 } 
         }
@@ -120,24 +124,24 @@ int main()
     while(k == 0)
     { 
         k = 1;
-        for(int l = 0; l < 1114112; l++)
+        for(int l = 0; l < count; l++)
         {
                 if(dabbing[l].b != 0)
-
                 {
                         k = 0;
                 }
         }
-         for(int j = 0; j < 1114112; j++)
+         for(int j = 0; j < count; j++)
          {
+                //printf("%s", dabbing[j].a);
                 if(dabbing[j].b > m)
                 {
                         m = dabbing[j].b;
                         //printf("%c->%d\n", n, m);
                         z = j;
-                        //printf("%d", m);
+                        //printf("%d", dabbing[j].b);
                 }
-                if(j == 1114111)
+                if(j == count - 1)
                 {
                         dabbing[z].b = 0;
                 }
@@ -147,8 +151,9 @@ int main()
                 printf("%s->%d\n", dabbing[z].a, m);
         }
         m = -1;
-    }  
-    // Close the file 
+    }
+    // Close the file  
     fclose(fp);
+    // Print the count of characters 
     return 0; 
-} 
+}  
