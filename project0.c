@@ -39,16 +39,83 @@ int main()
     for (c = getc(fp); c != EOF; c = getc(fp)) 
     {
         k = 0;
+ 	else if(c < 0x00E0)
+        {
+                one = c;
+                c = getc(fp);
+                two = c;
+        }
+        else if(c < 0x00F0)
+        {
+                //printf("Check Three");
+                one = c;
+                c = getc(fp);
+                two = c;
+                c = getc(fp);
+                three = c;
+        }
+        else if(c < 0x00F8)
+        {
+                //printf("Check Four");
+                one = c;
+                c = getc(fp);
+                two = c;
+                c = getc(fp);
+                three = c;
+                c = getc(fp);
+                four = c;
+        }
+        else
+        {
+                one = c;
+        }
       //Duplicate Loop to check for repeating characters
         for(int o = 0; o < count; o++)
         {
-                if(*dabbing[o].a == c && k == 0 && x == 0)
+                /*if(*dabbing[o].a == c && k == 0)
                 {
                         //printf("Here2");
                         dabbing[o].b = dabbing[o].b + 1;
                         k = 1;
 
+                }*/
+		            if(one < 0x0080)
+                {
+                	if(*dabbing[o].a == one  && k == 0 && x == 0)
+                        {
+                        	//printf("Here1");
+                                dabbing[o].b = dabbing[o].b + 1;
+                                k = 1;
+                        }
                 }
+		else if(one < 0x00E0)
+                {
+                        if(*dabbing[o].a == one && *(dabbing[o].a + 1)== two && k == 0 && x == 0)
+                        {
+                                 //printf("Here2");
+                                 dabbing[o].b = dabbing[o].b + 1;
+                                 k = 1;
+                        }
+                }
+                else if(one  < 0x00F0)
+                {
+                	if(*dabbing[o].a == one && *(dabbing[o].a + 1)== two && *(dabbing[o].a + 2) == three && k == 0 && x == 0)
+                	{
+                        	//printf("Here3");
+                        	dabbing[o].b = dabbing[o].b + 1;
+                        	k = 1;
+                        }
+                }
+                else if(one < 0x00F8)
+                {
+                        if(*dabbing[o].a == one && *(dabbing[o].a + 1)== two && *(dabbing[o].a + 2) == three && *(dabbing[o].a + 3) == four && k == 0 && x == 0)
+                        {
+                                //printf("Here4");
+                                dabbing[o].b = dabbing[o].b + 1;
+                                k = 1;
+                        }
+                }
+        }
         }
       //Loop to place new character in proper position
         if(k == 0)
