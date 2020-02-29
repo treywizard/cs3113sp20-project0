@@ -29,6 +29,10 @@ int main()
         //printf("%ls", dabbing[i].a);
     }
     unsigned char c;
+    unsigned char one;
+    unsigned char two;
+    unsigned char three;
+    unsigned char four;
   //Recieving Unicode Characters from local
     setlocale(LC_CTYPE, "");
   //Input file
