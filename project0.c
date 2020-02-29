@@ -123,7 +123,6 @@ int main()
                         }
                 }
         }
-        }
       //Loop to place new character in proper position
         if(k == 0)
         {
