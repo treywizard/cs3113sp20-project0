@@ -67,7 +67,6 @@ int main()
                                         *dabbing[p].a = c;
                                         //printf("Byte:1");
                                         dabbing[p].b = dabbing[p].b + 1;//printf("Byte:1");
-                                        dabbing[p].b = dabbing[p].b + 1;
                                 }
                                 else if(c < 0x00E0)
                                 {
