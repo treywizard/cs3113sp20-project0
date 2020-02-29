@@ -45,6 +45,7 @@ int main()
         k = 0;
         if(c < 0x0080)
         {
+		one = c;
         }
  	else if(c < 0x00E0)
         {
