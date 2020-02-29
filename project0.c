@@ -61,7 +61,7 @@ int main()
                                 dabbing[p].a = malloc(4 * sizeof(char));
                                 *dabbing[p].a = 'a';
                                 count = count + 1;
-                                printf("%s ", c);
+                                //printf("%s ", c);
                                 if(c < 0x0080)
                                 {
                                         *dabbing[p].a = c;
