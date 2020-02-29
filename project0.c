@@ -43,6 +43,9 @@ int main()
     for (c = getc(fp); c != EOF; c = getc(fp)) 
     {
         k = 0;
+        if(c < 0x0080)
+        {
+        }
  	else if(c < 0x00E0)
         {
                 one = c;
