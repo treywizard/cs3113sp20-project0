@@ -82,7 +82,7 @@ int main()
                 one = c;
         }
       //Duplicate Loop to check for repeating characters
-        for(o = 0; o < count; o++)
+        for(o = 0; o < count + 1; o++)
         {
                 /*if(*dabbing[o].a == c && k == 0)
                 {
