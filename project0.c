@@ -137,38 +137,29 @@ int main()
                                 //printf("%s ", c);
                                 if(one < 0x0080)
                                 {
-                                        *dabbing[p].a = c;
+                                        *dabbing[p].a = one;
                                         //printf("Byte:1");
                                         dabbing[p].b = dabbing[p].b + 1;//printf("Byte:1");
                                 }
                                 else if(one < 0x00E0)
                                 {
-                                        *(dabbing[p].a) = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 1)  = c;
-                                        //printf("Byte:2");
+                                        *(dabbing[p].a) = one;
+                                        *(dabbing[p].a + 1)  = two;
                                         dabbing[p].b = dabbing[p].b + 1;
                                 }
                                 else if(one < 0x00F0)
                                 {
-                                        *dabbing[p].a = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 1)  = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 2)  = c;
-                                        //printf("Byte:3");
+                                        *dabbing[p].a = one;
+                                        *(dabbing[p].a + 1)  = two;
+                                        *(dabbing[p].a + 2)  = three;
                                         dabbing[p].b = dabbing[p].b + 1;
                                 }
                                 else if(one < 0x00F8)
                                 {
-                                        *dabbing[p].a = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 1)  = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 2)  = c;
-                                        c = getc(fp);
-                                        *(dabbing[p].a + 3)  = c;
-                                        //printf("Byte:4");
+                                        *dabbing[p].a = one;
+                                        *(dabbing[p].a + 1)  = two;
+                                        *(dabbing[p].a + 2)  = three;
+                                        *(dabbing[p].a + 3)  = four;
                                         dabbing[p].b = dabbing[p].b + 1;
                                 }
                                 else
